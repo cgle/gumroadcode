@@ -1,5 +1,5 @@
 from collections import defaultdict
-clist =  [0,0]
+clist =  [0,2,-2]
 
 def pivot(clist):
     if len(clist)==1:
@@ -17,16 +17,16 @@ def pivot(clist):
                 add_var=1
             if clist[p]>=0:
                 if sum(front)<sum(end):
-                    p+=len(end)/2+add_var
+                    p=p-len(end)/2+add_var
                 elif sum(front)>sum(end):
-                    p-=len(front)/2-add_var
+                    p=p-len(front)/2-add_var
                 else:
                     return p
             else:
                 if sum(front)<sum(end):
-                    p-=len(front)/2-add_var
+                    p=p-len(front)/2-add_var
                 elif sum(front)>sum(end):
-                    p+=len(end)/2+add_var
+                    p=p-len(end)/2+add_var
                 else:
                     return p
             visited[p]+=1
